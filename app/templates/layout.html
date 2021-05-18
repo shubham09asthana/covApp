@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>covApp by S asthana</title>
+    <!--    <strong><link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}"></strong> -->
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <h1 class="logo">NOT FOR USE FROM BROWSER</h1>
+     
+        <strong><nav>
+          <ul class="menu">
+            <li><a href="https://youtu.be/SMlFn3evgYA">Autobots Roll Out!!</a></li>
+          </ul></strong>
+          <p>send a post query to : <a href="{{ url_for('home') }}sms">get slots available?</a> : With comma searated form body as:</p>
+          <p>PIN(6 digits), DATE(DD-MM-YYYY), AGE FILTER (18 or 45)</p>
+          <p><strong>NOTE:</strong> Any or all could be skipped. Only commas are important (we'll just replace it with OUR defaults!!)</p>
+        </nav>
+      </div>
+    </header>
+    <footer>
+      <p>Author: Shubham Asthana<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <a href="mailto:shubhamasthana111@gmail.com">Send Mail</a></p>
+      </footer>
+
+    <div class="container">
+      {% block content %}
+      {% endblock %}
+    </div>
+  </body>
+</html>

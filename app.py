@@ -1,9 +1,8 @@
 from flask import Flask, render_template
 import logging as log
-from decouple import config
-log.basicConfig(level=config('LOG_LEVEL'))
-
-
+# log.basicConfig(level='INFO')
+# log.basicConfig(format='%(process)d-%(levelname)s-%(message)s')
+log.basicConfig(level=log.INFO,format='%(levelname)s-%(asctime)s-%(levelname)s-%(message)s', datefmt='%d-%b-%y %H:%M:%S')
 
 flaskAppInstance = Flask(__name__)
 

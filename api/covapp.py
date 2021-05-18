@@ -4,7 +4,7 @@ from api import functions, get_send
 from datetime import date
 from flask_restful import Resource
 from decouple import config
-log.basicConfig(level=config('LOG_LEVEL'))
+
 
 
 class CovApp(Resource):
@@ -58,7 +58,7 @@ class CovApp(Resource):
         try:
             req_from_wApp=request.get_json()['message']['content']['text']
         except:
-            log.info('########################REQUEST NOT FROM WHATSAPP FOR SURE!!!!!!!')
+            log. info('########################REQUEST NOT FROM WHATSAPP FOR SURE!!!!!!!')
         if req_from_api!=None:
             req=req_from_api
         elif req_from_wApp != None:

@@ -1,11 +1,12 @@
 import requests, logging as log
-from decouple import Config, config
+from decouple import config
 from requests.models import HTTPBasicAuth
+
 
 API_KEY=config('API_KEY')
 API_SECRET=config('API_SECRET')
 URL=config('SANDBOX_URL')
-SANDBOX_NUMBER=Config('SANDBOX_VIRTUAL_PHONE_NUMBER')
+SANDBOX_NUMBER=config('SANDBOX_VIRTUAL_PHONE_NUMBER')
 def getdata(url,headers):
         try:
             data=requests.get(url,headers=headers)
@@ -22,7 +23,7 @@ def getdata(url,headers):
 def senddata(to_num,msg):
     auth=HTTPBasicAuth(API_KEY,API_SECRET)
     data={
-    "from": { "type": "whatsapp", "number": "" },
+    "from": { "type": "whatsapp", "number": SANDBOX_NUMBER },
     "to": { "type": "whatsapp", "number": to_num },
     "message": {
       "content": {
@@ -37,3 +38,4 @@ def senddata(to_num,msg):
     except Exception as e:
         ConnectionError(e)
     return
+
